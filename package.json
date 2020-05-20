@@ -1,0 +1,25 @@
+{
+  "name": "vernal_blog",
+  "version": "1.0.0",
+  "description": "A simple blog website, built with Semantic UI, to underline the principles of RESTful Routing",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ntochi/vernal_blog.git"
+  },
+  "author": "Nancy O.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ntochi/vernal_blog/issues"
+  },
+  "homepage": "https://ntochi.github.io/vernal_blog/",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.15"
+  }
+}
