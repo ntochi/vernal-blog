@@ -1,0 +1,31 @@
+<%- include('partials/header') %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Edit <%= blog.title %></div>
+    <form class="ui form" action="/blogs/<%= blog._id %>?_method=PUT" method="POST">
+        <!-- Above, HTML forms doesn't accept PUT requests so we use a method-override -->
+        <!-- Below, the form's name attribute syntax is specific to body-parser -->
+        <div class="field">
+            <label for="title">Title</label>
+            <input id="title" type="text" name="blog[title]" value="<%= blog.title %>">
+        </div>
+
+        <div class="field">
+            <label for="image">Image</label>
+            <input id="image" type="text" name="blog[image]" value="<%= blog.image %>">
+        </div>
+
+        <div class="field">
+            <label>Share your thoughts</label>
+            <textarea name="blog[body]" required><%= blog.body %></textarea>
+        </div>
+
+        <div class="field">
+            <input class="ui green button" type="submit" value="Update">
+        </div>
+    </form>
+
+</div>
+
+
+<%- include('partials/footer') %>
