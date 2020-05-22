@@ -72,6 +72,7 @@ app.get("/blogs/new", function(req, res){
 
 //CREATE- create a new blog, then redirect
 app.post("/blogs", function(req, res){
+	req.body.blog.body = req.sanitize(req.body.blog.body)
 	//Get data from form & save to database
 	Blog.create(req.body.blog, function (err, newBlog) {
 		if (err) {
@@ -106,6 +107,7 @@ app.get("/blogs/:id/edit", function(req, res){
 
 //UPDATE- update particular blog, then redirect
 app.put("/blogs/:id", function (req, res){
+	req.body.blog.body = req.sanitize(req.body.blog.body)
 	Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updateBlog){
 		if(err){
 			res.redirect("/blogs/:id/edit")
