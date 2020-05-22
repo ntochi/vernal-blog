@@ -7,20 +7,20 @@
         <div class="item">
             <img class="ui centered rounded image" src="<%= blog.image %>">
 
-            <div class="content">
-                <span><%= blog.created.toDateString() %></span>
-            </div>
-
+            <span><%= blog.created.toDateString() %></span>
+    
             <div class="description">
                 <!-- EJS (-) outputs value of code on the page -->
                 <p><%- blog.body %></p>
             </div>
 
-            <a class="ui teal button" href="/blogs/<%= blog._id %>/edit">Edit Post</a>
+            <div class="buttons">
+                <a class="ui teal button" href="/blogs/<%= blog._id %>/edit">Edit Post</a>
 
-            <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
-                <input class="ui red small button" type="submit" value="Delete Post">
-            </form>
+                <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+                    <input class="ui red small button" type="submit" value="Delete Post">
+                </form>    
+            </div>
         </div>
     </div>
 </div>
