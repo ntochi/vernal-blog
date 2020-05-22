@@ -5,3 +5,33 @@ i.sun{
 .container.main{
     margin-top: 7em;
 }
+
+.segment.attached{
+    border: none;
+}
+
+#delete{
+    display: inline;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: 300px;
+}
+
+div.item.items{
+    margin: 3%;
+}
+
+.content h2{
+    margin-bottom: 0;
+}
+
+div.description{
+    margin-top: 2%;
+}
+
+div.buttons{
+    margin-top: 2%;
+}
