@@ -87,7 +87,7 @@ app.post("/blogs", function(req, res){
 app.get("/blogs/:id", function (req, res){
 	Blog.findById(req.params.id, function(err, specificBlog){
 		if(err){
-			res.redirect("/blogs")
+			console.log(err);
 		} else {
 			res.render("show", {blog: specificBlog});
 		}
@@ -98,7 +98,7 @@ app.get("/blogs/:id", function (req, res){
 app.get("/blogs/:id/edit", function(req, res){
 	Blog.findById(req.params.id, function(err, editBlog){
 		if(err){
-			res.redirect("/blogs")
+			console.log(err);
 		} else {
 			res.render("edit", {blog: editBlog});
 		}
@@ -110,7 +110,7 @@ app.put("/blogs/:id", function (req, res){
 	req.body.blog.body = req.sanitize(req.body.blog.body)
 	Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updateBlog){
 		if(err){
-			res.redirect("/blogs/:id/edit")
+			console.log(err);
 		} else {
 			res.redirect("/blogs/" + req.params.id)
 		}
@@ -121,7 +121,7 @@ app.put("/blogs/:id", function (req, res){
 app.delete("/blogs/:id", function (req, res){
 	Blog.findByIdAndRemove(req.params.id, function(err){
 		if(err){
-			res.redirect("/blogs")
+			console.log(err);
 		} else {
 			res.redirect("/blogs")
 		}
@@ -131,5 +131,5 @@ app.delete("/blogs/:id", function (req, res){
 
 
 app.listen(port, function(){
-	console.log("Vernal Blog Has Started!");
+	console.log("Vernal Blog Server Has Started!");
 });
