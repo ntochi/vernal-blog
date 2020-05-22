@@ -1,16 +1,39 @@
 <%- include('partials/header') %>
 
-<!-- Loop through blog array -->
-<% blogs.forEach(function(blog){ %>
+<div class="ui main text container segment">
+    <div class="ui huge header">Read Today's Story</div>
 
-    <div>
-        <h2><%= blog.title %></h2>
-        <img src="<%= blog.image %>">
-        <span><%= blog.created.toDateString() %></span>
-        <p><%= blog.body.substring(0, 100) %>...</p>
-        <a class="ui violet button" href="/blogs/<%= blog._id %>">Read More</a>
+    <div class="ui segments">
+        <div class="ui segment">
+            <!-- Loop through blog array -->
+            <% blogs.forEach(function(blog){ %>
+                <div class="item items">
+                    <div class="image">
+                        <img src="<%= blog.image %>">
+                    </div>
+
+                    <div class="content">
+                        <h2><%= blog.title %></h2>
+
+                        <span><%= blog.created.toDateString() %></span>
+
+                        <div class="description">
+                            <p><%- blog.body.substring(0, 100) %>...</p>
+                        </div>
+
+                        <div class="buttons">
+                            <a class="ui violet button" href="/blogs/<%= blog._id %>">
+                                Read More
+                                <i class="right chevron icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
     </div>
 
-<% }) %>
+</div>
+
 
 <%- include('partials/footer') %>
