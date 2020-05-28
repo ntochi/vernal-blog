@@ -51,7 +51,7 @@ app.get("/blogs", function(req, res){
 	});
 });
 
-//NEW- show new blog form
+//NEW- display form for new blog
 app.get("/blogs/new", function(req, res){
 	res.render("new");
 });
@@ -80,7 +80,7 @@ app.get("/blogs/:id", function (req, res){
 	});
 });
 
-//EDIT- show edit form for one blog
+//EDIT- display form to edit one blog
 app.get("/blogs/:id/edit", function(req, res){
 	Blog.findById(req.params.id, function(err, editBlog){
 		if(err){
