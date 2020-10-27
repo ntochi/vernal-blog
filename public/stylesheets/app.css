@@ -1,16 +1,16 @@
-i.sun{
+i.sun{ 
     font-size: 2em;
 }
 
-.container.main{
+.container.main {
     margin-top: 7em;
 }
 
-.segment.attached{
+.segment.attached {
     border: none;
 }
 
-#delete{
+#delete {
     display: inline;
 }
 
@@ -20,18 +20,18 @@ img {
     height: 300px;
 }
 
-div.item.items{
+div.item.items {
     margin: 3%;
 }
 
-.content h2{
+.content h2 {
     margin-bottom: 0;
 }
 
-div.description{
+div.description {
     margin-top: 2%;
 }
 
-div.buttons{
+div.buttons {
     margin-top: 2%;
 }
